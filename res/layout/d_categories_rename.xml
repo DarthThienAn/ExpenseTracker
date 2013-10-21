@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/edit_rename"
+          android:padding="16dp"
+          style="@style/wrapHeightMatchWidth"
+          android:hint="rename"
+          android:singleLine="true"
+        >
+
+</EditText>

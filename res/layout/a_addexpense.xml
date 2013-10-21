@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <LinearLayout
+            android:id="@+id/addexpense_properties"
+            android:orientation="vertical"
+            style="@style/wrapHeightMatchWidth">
+
+        <!--Title-->
+        <TextView
+                android:id="@+id/addexpense_title"
+                android:layout_weight="0"
+                android:text="Add Expense"
+                style="@style/title" />
+
+        <!--Date-->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="0"
+                style="@style/wrapHeightMatchWidth">
+            <Spinner android:id="@+id/addexpense_month"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/addexpense_day"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/addexpense_year"
+                     android:layout_weight="2"
+                     style="@style/horizontalWeighted"
+                    />
+        </LinearLayout>
+
+        <!--Cost and Category-->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="0"
+                style="@style/wrapHeightMatchWidth">
+            <EditText
+                    android:id="@+id/addexpense_cost"
+                    style="@style/wrapWrap"
+                    android:inputType="numberDecimal"
+                    android:layout_weight="1"
+                    android:hint="$$$$"
+                    />
+            <Spinner
+                    android:id="@+id/addexpense_category"
+                    android:layout_weight="1"
+                    style="@style/wrapWrap"
+                    />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Comment-->
+    <EditText
+            android:id="@+id/addexpense_comment"
+            android:layout_below="@id/addexpense_properties"
+            style="@style/matchMatch"
+            android:hint="comment"
+            />
+</RelativeLayout>

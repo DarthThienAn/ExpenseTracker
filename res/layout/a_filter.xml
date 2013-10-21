@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="16dp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <!--Title-->
+    <TextView
+            android:id="@+id/filter_title"
+            android:layout_weight="0"
+            android:text="Filter"
+            style="@style/title" />
+
+    <!--Date Range-->
+    <RelativeLayout
+            android:layout_weight="0"
+            style="@style/wrapHeightMatchWidth">
+        <!--Start Date-->
+        <TextView
+                android:id="@+id/filter_start_date_text"
+                android:gravity="center_vertical|right"
+                android:text="Start Date"
+                style="@style/wrapWrap" />
+        <LinearLayout
+                android:id="@+id/filter_start_dates"
+                android:layout_toRightOf="@id/filter_start_date_text"
+                android:orientation="horizontal"
+                style="@style/wrapHeightMatchWidth">
+            <Spinner android:id="@+id/filter_start_date_month"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/filter_start_date_day"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/filter_start_date_year"
+                     android:layout_weight="2"
+                     style="@style/horizontalWeighted"
+                    />
+        </LinearLayout>
+
+        <!--End Date-->
+        <TextView
+                android:id="@+id/filter_end_date_text"
+                android:layout_alignRight="@id/filter_start_date_text"
+                android:layout_below="@id/filter_start_dates"
+                android:text="End Date"
+                android:gravity="center_vertical|right"
+                style="@style/wrapWrap" />
+        <LinearLayout
+                android:id="@+id/filter_end_dates"
+                android:layout_toRightOf="@id/filter_end_date_text"
+                android:layout_below="@id/filter_start_dates"
+                android:orientation="horizontal"
+                style="@style/wrapHeightMatchWidth">
+            <Spinner android:id="@+id/filter_end_date_month"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/filter_end_date_day"
+                     android:layout_weight="1"
+                     style="@style/horizontalWeighted"
+                    />
+            <Spinner android:id="@+id/filter_end_date_year"
+                     android:layout_weight="2"
+                     style="@style/horizontalWeighted"
+                    />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--Categories-->
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="0"
+            style="@style/wrapHeightMatchWidth">
+        <EditText
+                android:id="@+id/addexpense_cost"
+                style="@style/wrapWrap"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:hint="$$$$"
+                />
+        <Spinner
+                android:id="@+id/addexpense_category"
+                android:layout_weight="1"
+                style="@style/wrapWrap"
+                />
+
+    </LinearLayout>
+
+    <!--Expenses-->
+    <ListView
+            android:id="@android:id/list"
+            android:layout_weight="1"
+            style="@style/wrapHeightMatchWidth"
+            />
+</LinearLayout>
