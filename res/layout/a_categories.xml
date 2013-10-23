@@ -10,6 +10,7 @@
             android:layout_weight="0"
             android:text="Manage Categories"
             style="@style/title" />
+
     <ListView android:id="@android:id/list"
               android:layout_weight="1"
               style="@style/wrapHeightMatchWidth"

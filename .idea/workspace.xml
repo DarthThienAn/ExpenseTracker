@@ -22,25 +22,28 @@
       </GlobalState>
     </option>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="EXPENSE" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryDBHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryEntry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpenseTracker.iml" afterPath="$PROJECT_DIR$/ExpenseTracker.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/R.java" afterPath="$PROJECT_DIR$/gen/com/mark/ExpenseTracker/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Utils.java" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/list/CategoriesAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/i_category.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java" afterPath="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/a_categories.xml" afterPath="$PROJECT_DIR$/res/layout/a_categories.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExpenseTracker.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382502574552" ignored="false" />
+    <file path="/Dummy.txt" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382507849237" ignored="false" />
     <file path="/activity_addexpense.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382213164646" ignored="false" />
     <file path="/styles.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382221928506" ignored="false" />
     <file path="$USER_HOME$/Documents/Development/mobile-sdk-android/sdk/src/com/appnexus/opensdk/AdView.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382217728187" ignored="false" />
@@ -59,7 +62,7 @@
     <file path="/MainActivity.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382218505012" ignored="false" />
     <file path="$USER_HOME$/Documents/Development/mobile-sdk-android/sdk/src/com/appnexus/opensdk/AdRequest.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382217927618" ignored="false" />
     <file path="/activity_categories.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382219788037" ignored="false" />
-    <file path="/Categories.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382219776803" ignored="false" />
+    <file path="/Categories.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382508922553" ignored="false" />
     <file path="/d_categories_rename.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382219355770" ignored="false" />
     <file path="/Category.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382219094467" ignored="false" />
     <file path="/Filter.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382502159012" ignored="false" />
@@ -67,19 +70,21 @@
     <file path="/a_addexpense.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382221939459" ignored="false" />
     <file path="/i_expense.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382317318227" ignored="false" />
     <file path="/Expense.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382317453095" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382318128923" ignored="false" />
-    <file path="/fragment.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382318053145" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382507437604" ignored="false" />
+    <file path="/fragment.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382506135753" ignored="false" />
     <file path="/Utils.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382496302335" ignored="false" />
-    <file path="/AddExpense.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382318881370" ignored="false" />
+    <file path="/AddExpense.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382504562647" ignored="false" />
     <file path="/DateSpinnerController.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382368752647" ignored="false" />
     <file path="/CategoryDBHelper.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382495812360" ignored="false" />
     <file path="/CategoryContract.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382495745980" ignored="false" />
     <file path="/DBUtils.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382501875242" ignored="false" />
     <file path="/Constants.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382499230028" ignored="false" />
-    <file path="/CategoryDBOperator.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382503101829" ignored="false" />
+    <file path="/CategoryDBOperator.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382508774636" ignored="false" />
     <file path="/a.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382501981835" ignored="false" />
     <file path="$USER_HOME$/Downloads/~school/Thesis/Demos/Contacts/src/com/thesis/Contacts/MyActivity.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382502244355" ignored="false" />
     <file path="/MyActivity.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382502242123" ignored="false" />
+    <file path="/CategoriesAdapter.java" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382507865673" ignored="false" />
+    <file path="/i_category.xml" changelist="1664ab2a-8716-4e9e-8d48-c75cb943cbbe" time="1382506040811" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,46 +148,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Categories.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="58" selection-start="2932" selection-end="2932" vertical-scroll-proportion="0.5074627">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CategoryDBHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryDBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="18" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0">
+            <state line="20" column="11" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryContract.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java">
+      <file leaf-file-name="CategoriesAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/list/CategoriesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="59" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Categories.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="40" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Filter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Filter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryEntry.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryEntry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="52" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+            <state line="15" column="52" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -191,48 +189,54 @@
       <file leaf-file-name="CategoryDBOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2992#3000#0" expanded="true" />
-              </folding>
+            <state line="38" column="50" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/utility/ChatHelper.java">
+      <file leaf-file-name="CategoryContract.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="25" selection-start="238" selection-end="454" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d_categories_rename.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/d_categories_rename.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DateSpinnerController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/DateSpinnerController.java">
+      <file leaf-file-name="i_expense.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/i_expense.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="35" selection-start="1618" selection-end="1678" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Utils.java">
+      <file leaf-file-name="i_category.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/i_category.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="5" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.53518516">
+            <state line="5" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -254,22 +258,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/res/layout/a_addexpense.xml" />
-        <option value="$PROJECT_DIR$/res/layout/i_expense.xml" />
-        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/item/Expense.java" />
         <option value="$PROJECT_DIR$/res/layout/a_filter.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/DateSpinnerController.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryDBHelper.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryEntry.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/DBUtils.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Filter.java" />
-        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java" />
         <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Utils.java" />
+        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java" />
+        <option value="$PROJECT_DIR$/res/layout/a_categories.xml" />
+        <option value="$PROJECT_DIR$/res/layout/i_category.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java" />
+        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/list/CategoriesAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java" />
+        <option value="$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java" />
       </list>
     </option>
   </component>
@@ -305,7 +309,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,6 +346,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpenseTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpenseTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpenseTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="list" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,6 +490,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,18 +500,18 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/contentprovider/LocationContentProvider.java" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -524,19 +550,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -562,6 +575,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -677,20 +703,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270869" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23257576" sideWeight="0.67014927" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23181818" sideWeight="0.67291313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.67014927" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.6712095" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -755,101 +781,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/item/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="34" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/android-sdks/sources/android-14/android/provider/BaseColumns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="665" selection-end="665" vertical-scroll-proportion="0.12592593" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/database/LocationDatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/database/LocationTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3548387" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/contentprovider/LocationContentProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Sonar/android/sonar/src/me/sonar/android/utility/ChatHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="40" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Filter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="52" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="59" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryDBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2992#3000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/DateSpinnerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="35" selection-start="1618" selection-end="1678" vertical-scroll-proportion="0.0">
@@ -859,7 +790,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="5" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.53518516">
+        <state line="27" column="0" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/a_categories.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/AddExpense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/d_categories_rename.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/i_expense.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/i_category.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="52" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="25" selection-start="238" selection-end="454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/database/CategoryDBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/android-sdks/platforms/android-17/android.jar!/java/lang/Override.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="18" selection-start="306" selection-end="306" vertical-scroll-proportion="0.3429395" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/android-sdks/platforms/android-17/android.jar!/android/content/Context.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="22" selection-start="167" selection-end="167" vertical-scroll-proportion="0.25449103" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/android-sdks/platforms/android-17/android.jar!/android/database/sqlite/SQLiteDatabase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="15" selection-start="8700" selection-end="8700" vertical-scroll-proportion="0.3313433">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/util/CategoryDBOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="50" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/list/CategoriesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mark/ExpenseTracker/activity/Categories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="58" selection-start="2932" selection-end="2932" vertical-scroll-proportion="0.5074627">
           <folding />
         </state>
       </provider>

@@ -2,11 +2,9 @@ package com.mark.ExpenseTracker.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.mark.ExpenseTracker.R;
 import com.mark.ExpenseTracker.util.DateSpinnerController;
-import com.mark.ExpenseTracker.util.Utils;
 
 public class AddExpense extends Activity {
 
@@ -18,7 +16,8 @@ public class AddExpense extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_addexpense);
 
-        dateController = new DateSpinnerController(this);
+        dateController = new DateSpinnerController(this,
+                R.id.addexpense_day, R.id.addexpense_month, R.id.addexpense_year);
 
         spinnerCategory = (Spinner) findViewById(R.id.addexpense_category);
         // create adapter from database table

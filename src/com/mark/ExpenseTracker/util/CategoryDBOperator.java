@@ -29,19 +29,19 @@ public class CategoryDBOperator {
         if (newRowId == -1){
             Log.d(Constants.LOG_TAG, "row insert failed");
         }
+        Log.d(Constants.LOG_TAG, name + " added");
     }
 
-    public int updateCategory(String name) {
+    public int updateCategory(String oldName, String newName) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(CategoryEntry.COLUMN_NAME, name);
+        values.put(CategoryEntry.COLUMN_NAME, newName);
 
         String selection = CategoryEntry.COLUMN_NAME + " LIKE ?";
-        String[] selectionArgs = { name };
+        String[] selectionArgs = { oldName };
 
-        int count = db.update(CategoryEntry.TABLE_NAME, values, selection, selectionArgs);
-        return count;
+        return db.update(CategoryEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
     public void deleteCategory(String name) {
@@ -90,5 +90,9 @@ public class CategoryDBOperator {
             cursor.moveToNext();
         }
         return names;
+    }
+
+    public static String getNameFromCursor(Cursor cursor) {
+        return cursor.getString(cursor.getColumnIndexOrThrow(CategoryEntry.COLUMN_NAME));
     }
 }
