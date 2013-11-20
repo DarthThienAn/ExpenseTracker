@@ -17,6 +17,7 @@
 package com.mark.ExpenseTracker.util;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -31,5 +32,11 @@ public class Utils {
 
         spinner.setAdapter(adapter);
         return spinner;
+    }
+
+    public static final boolean LOG = true;
+
+    public static void ETLOG(String message) {
+        if (LOG) Log.d(Constants.LOG_TAG, message);
     }
 }

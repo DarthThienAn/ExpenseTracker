@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.mark.ExpenseTracker.R;
 import com.mark.ExpenseTracker.util.CategoryDBOperator;
 import com.mark.ExpenseTracker.util.Constants;
+import com.mark.ExpenseTracker.util.Utils;
 
 public class CategoriesAdapter extends CursorAdapter {
     public CategoriesAdapter(Context context, Cursor c) {
@@ -25,7 +26,7 @@ public class CategoriesAdapter extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        Log.d(Constants.LOG_TAG, "newView");
+        Utils.ETLOG("newView");
         TextView tv = createNewView(context);
         tv.setText(CategoryDBOperator.getNameFromCursor(cursor));
         return tv;
@@ -33,7 +34,7 @@ public class CategoriesAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        Log.d(Constants.LOG_TAG, "bindView");
+        Utils.ETLOG("bindView");
         TextView tv;
         if (view instanceof TextView) {
             tv = (TextView) view;

@@ -27,9 +27,9 @@ public class CategoryDBOperator {
                 null,
                 values);
         if (newRowId == -1){
-            Log.d(Constants.LOG_TAG, "row insert failed");
+            Utils.ETLOG("row insert failed");
         }
-        Log.d(Constants.LOG_TAG, name + " added");
+        Utils.ETLOG(name + " added");
     }
 
     public int updateCategory(String oldName, String newName) {
