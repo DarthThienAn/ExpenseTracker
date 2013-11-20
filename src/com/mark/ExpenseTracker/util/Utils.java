@@ -34,9 +34,21 @@ public class Utils {
         return spinner;
     }
 
+    public static boolean isStringEmpty(String s) {
+        return (s == null) || s.isEmpty();
+    }
+
     public static final boolean LOG = true;
 
-    public static void ETLOG(String message) {
+    public static void LogD(String message) {
         if (LOG) Log.d(Constants.LOG_TAG, message);
+    }
+
+    public static void LogW(String message) {
+        if (LOG) Log.w(Constants.LOG_TAG, message);
+    }
+
+    public static void LogE(String message) {
+        if (LOG) Log.e(Constants.LOG_TAG, message);
     }
 }

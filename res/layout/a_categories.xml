@@ -9,8 +9,16 @@
             android:id="@+id/categories_title"
             android:layout_weight="0"
             android:text="Manage Categories"
-            style="@style/title" />
+            style="@style/title"
+            />
 
+    <Button android:id="@+id/categories_btn_add"
+            android:layout_weight="0"
+            android:text="Add Categories"
+            style="@style/wrapHeightMatchWidth"
+            />
+
+    <!--Categories List-->
     <ListView android:id="@android:id/list"
               android:layout_weight="1"
               style="@style/wrapHeightMatchWidth"

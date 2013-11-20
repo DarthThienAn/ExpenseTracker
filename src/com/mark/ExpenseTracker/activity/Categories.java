@@ -22,14 +22,12 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.ListView;
+import android.widget.*;
 import com.mark.ExpenseTracker.R;
 import com.mark.ExpenseTracker.database.CategoryEntry;
 import com.mark.ExpenseTracker.list.CategoriesAdapter;
 import com.mark.ExpenseTracker.util.CategoryDBOperator;
+import com.mark.ExpenseTracker.util.Utils;
 
 public class Categories extends ListActivity implements AdapterView.OnItemClickListener {
 
@@ -37,17 +35,55 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
     AlertDialog dialogRename;
     EditText editRename;
     String oldName;
+    Button btnAddCategory;
+    AlertDialog dialogAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_categories);
+
+        btnAddCategory = (Button) findViewById(R.id.categories_btn_add);
+        btnAddCategory.setOnClickListener(btnAddCategoryListener);
+
         CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
-        Cursor categoriesCursor = categoryDBOperator.getCategories(null, null);
-        categoriesAdapter = new CategoriesAdapter(getApplicationContext(), categoriesCursor);
+        categoriesAdapter = new CategoriesAdapter(getApplicationContext(), categoryDBOperator.getAllCategories());
         getListView().setOnItemClickListener(this);
         getListView().setAdapter(categoriesAdapter);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (dialogAdd != null) dialogAdd.dismiss();
+        if (dialogRename != null) dialogRename.dismiss();
+    }
+
+    final View.OnClickListener btnAddCategoryListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            final EditText editAdd = (EditText) getLayoutInflater().inflate(R.layout.d_categories_add, null, false);
+
+            dialogAdd = new AlertDialog.Builder(Categories.this)
+                    .setView(editAdd)
+                    .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String categoryName = editAdd.getText().toString().trim();
+                            if (!Utils.isStringEmpty(categoryName)) {
+                                CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
+                                categoryDBOperator.addCategory(categoryName);
+                                refreshCursor(categoryDBOperator);
+                            } else {
+                                Utils.LogW("Can't add empty category!");
+                            }
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .setCancelable(true)
+                    .show();
+        }
+    };
 
     @Override
     public ListView getListView() {
@@ -96,23 +132,33 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
                 .show();
     }
 
+    private void refreshCursor(CategoryDBOperator categoryDBOperator) {
+        categoriesAdapter.changeCursor(categoryDBOperator.getAllCategories());
+    }
+
+    /**
+     * Rename Dialog
+     */
+
     private final AlertDialog.OnClickListener dialogRenameConfirm = new AlertDialog.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
             if ((oldName != null) && (editRename != null)) {
-                String newName = editRename.getText().toString();
-                CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
-                categoryDBOperator.updateCategory(oldName, newName);
+                String newName = editRename.getText().toString().trim();
+                if (!oldName.equals(newName)) {
+                    CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
+                    categoryDBOperator.updateCategory(oldName, newName);
+                    refreshCursor(categoryDBOperator);
+                }
             }
             cleanupRename();
-            dialogInterface.dismiss();
         }
     };
 
     private final AlertDialog.OnClickListener dialogRenameClose = new AlertDialog.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
-            dialogInterface.cancel();
+            cleanupRename();
         }
     };
 
@@ -124,6 +170,7 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
     };
 
     private void cleanupRename() {
+        dialogRename = null;
         oldName = null;
         editRename = null;
     }

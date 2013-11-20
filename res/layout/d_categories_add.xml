@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/edit_add"
+          android:padding="16dp"
+          style="@style/wrapHeightMatchWidth"
+          android:hint="category name"
+          android:singleLine="true"
+        >
+
+</EditText>

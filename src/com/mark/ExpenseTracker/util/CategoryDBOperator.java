@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import com.mark.ExpenseTracker.database.CategoryDBHelper;
 import com.mark.ExpenseTracker.database.CategoryEntry;
 import java.util.ArrayList;
@@ -17,22 +16,54 @@ public class CategoryDBOperator {
     }
 
     public void addCategory(String name) {
+        if (Utils.isStringEmpty(name)) {
+            Utils.LogE("name cannot be empty");
+            return;
+        }
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(CategoryEntry.COLUMN_NAME, name);
+
+        if (checkIfCategoryExists(name)) {
+            return;
+        }
 
         long newRowId = db.insert(
                 CategoryEntry.TABLE_NAME,
                 null,
                 values);
         if (newRowId == -1){
-            Utils.ETLOG("row insert failed");
+            Utils.LogE("Failed to add category: " + name);
+            return;
         }
-        Utils.ETLOG(name + " added");
+        Utils.LogD("Category added: " + name);
+    }
+
+    private boolean checkIfCategoryExists(String name) {
+        if (Utils.isStringEmpty(name)) {
+            Utils.LogE("name cannot be empty");
+            return false;
+        }
+
+        String selection = CategoryEntry.COLUMN_NAME + " LIKE ?";
+        String[] selectionArgs = { name };
+        Cursor cursor = getCategories(selection, selectionArgs);
+        if (cursor.getCount() > 0) {
+            Utils.LogW("Category already exists in DB: " + name);
+            return true;
+        }
+
+        return false;
     }
 
     public int updateCategory(String oldName, String newName) {
+        if (Utils.isStringEmpty(oldName) || Utils.isStringEmpty(newName)) {
+            Utils.LogE("name cannot be empty");
+            return -1;
+        }
+
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         ContentValues values = new ContentValues();
@@ -41,18 +72,34 @@ public class CategoryDBOperator {
         String selection = CategoryEntry.COLUMN_NAME + " LIKE ?";
         String[] selectionArgs = { oldName };
 
-        return db.update(CategoryEntry.TABLE_NAME, values, selection, selectionArgs);
+        int result = db.update(CategoryEntry.TABLE_NAME, values, selection, selectionArgs);
+        if (result == 1) {
+            Utils.LogD("Category update " + oldName + " to " + newName);
+        } else {
+            Utils.LogE("Failed to update category: " + oldName + " to " + newName);
+        }
+        return result;
     }
 
     public void deleteCategory(String name) {
+        if (Utils.isStringEmpty(name)) {
+            Utils.LogE("name cannot be empty");
+            return;
+        }
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String selection = CategoryEntry.COLUMN_NAME + " LIKE ?";
         String[] selectionArgs = { name };
-        db.delete(CategoryEntry.TABLE_NAME, selection, selectionArgs);
+        int result = db.delete(CategoryEntry.TABLE_NAME, selection, selectionArgs);
+        Utils.LogD("Category deleted " + result + " rows");
+    }
+
+    public Cursor getAllCategories() {
+        return getCategories(null, null);
     }
 
     public Cursor getCategories(String selection, String[] selectionArgs) {
-        String sortOrder = CategoryEntry._ID + " DESC";
+        String sortOrder = CategoryEntry.COLUMN_NAME + " ASC";
         return getCategories(selection, selectionArgs, sortOrder);
     }
 
