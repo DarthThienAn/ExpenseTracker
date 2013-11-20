@@ -19,6 +19,7 @@ package com.mark.ExpenseTracker.activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,21 +27,26 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.mark.ExpenseTracker.R;
-import com.mark.ExpenseTracker.item.Category;
+import com.mark.ExpenseTracker.database.CategoryEntry;
+import com.mark.ExpenseTracker.list.CategoriesAdapter;
+import com.mark.ExpenseTracker.util.CategoryDBOperator;
 
 public class Categories extends ListActivity implements AdapterView.OnItemClickListener {
 
-    ListAdapter listAdapter;
+    CategoriesAdapter categoriesAdapter;
     AlertDialog dialogRename;
-    Category selectedItem;
     EditText editRename;
+    String oldName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_categories);
-//        listAdapter = new
+        CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
+        Cursor categoriesCursor = categoryDBOperator.getCategories(null, null);
+        categoriesAdapter = new CategoriesAdapter(getApplicationContext(), categoriesCursor);
         getListView().setOnItemClickListener(this);
+        getListView().setAdapter(categoriesAdapter);
     }
 
     @Override
@@ -65,22 +71,23 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
 
     @Override
     public ListAdapter getListAdapter() {
-        return listAdapter;
+        return categoriesAdapter;
     }
 
     @Override
     public void setListAdapter(ListAdapter adapter) {
-        listAdapter = adapter;
+        categoriesAdapter = (CategoriesAdapter) adapter;
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        selectedItem = (Category) listAdapter.getItem(i);
+        categoriesAdapter.getCursor().moveToPosition(i);
+        oldName = categoriesAdapter.getCursor().getString(categoriesAdapter.getCursor().getColumnIndex(CategoryEntry.COLUMN_NAME));
 
         editRename = (EditText) getLayoutInflater().inflate(R.layout.d_categories_rename, null, false);
-        editRename.setText(selectedItem.getName());
+        editRename.setText(oldName);
 
-        dialogRename = new AlertDialog.Builder(getBaseContext())
+        dialogRename = new AlertDialog.Builder(Categories.this)
                 .setView(editRename)
                 .setPositiveButton("Save", dialogRenameConfirm)
                 .setNegativeButton("Cancel", dialogRenameClose)
@@ -92,9 +99,10 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
     private final AlertDialog.OnClickListener dialogRenameConfirm = new AlertDialog.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
-            if ((selectedItem != null) && (editRename != null)) {
+            if ((oldName != null) && (editRename != null)) {
                 String newName = editRename.getText().toString();
-                selectedItem.setName(newName);
+                CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
+                categoryDBOperator.updateCategory(oldName, newName);
             }
             cleanupRename();
             dialogInterface.dismiss();
@@ -116,7 +124,7 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
     };
 
     private void cleanupRename() {
-        selectedItem = null;
+        oldName = null;
         editRename = null;
     }
 }

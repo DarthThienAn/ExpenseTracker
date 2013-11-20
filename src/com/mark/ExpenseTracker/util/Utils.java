@@ -17,7 +17,6 @@
 package com.mark.ExpenseTracker.util;
 
 import android.app.Activity;
-import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -33,5 +32,4 @@ public class Utils {
         spinner.setAdapter(adapter);
         return spinner;
     }
-
 }
