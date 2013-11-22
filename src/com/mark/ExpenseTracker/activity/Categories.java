@@ -69,6 +69,10 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         if (dialogDelete != null) dialogDelete.dismiss();
     }
 
+    /**
+     * Add Category
+     */
+
     final View.OnClickListener btnAddCategoryListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -176,6 +180,24 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         }
     };
 
+    private final DialogInterface.OnCancelListener dialogRenameCancel = new DialogInterface.OnCancelListener() {
+        @Override
+        public void onCancel(DialogInterface dialogInterface) {
+            cleanupRename();
+        }
+    };
+
+    private void cleanupRename() {
+        dialogRename = null;
+        oldName = null;
+        editRename = null;
+        isShowing = false;
+    }
+
+    /**
+     * Delete dialog (extension of Rename)
+     */
+
     private final AlertDialog.OnClickListener dialogRenameDelete = new AlertDialog.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
@@ -204,17 +226,4 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         }
     };
 
-    private final DialogInterface.OnCancelListener dialogRenameCancel = new DialogInterface.OnCancelListener() {
-        @Override
-        public void onCancel(DialogInterface dialogInterface) {
-            cleanupRename();
-        }
-    };
-
-    private void cleanupRename() {
-        dialogRename = null;
-        oldName = null;
-        editRename = null;
-        isShowing = false;
-    }
 }
