@@ -31,12 +31,21 @@ import com.mark.ExpenseTracker.util.Utils;
 
 public class Categories extends ListActivity implements AdapterView.OnItemClickListener {
 
-    CategoriesAdapter categoriesAdapter;
-    AlertDialog dialogRename;
-    EditText editRename;
-    String oldName;
-    Button btnAddCategory;
-    AlertDialog dialogAdd;
+    private CategoriesAdapter categoriesAdapter;
+
+    // add dialog
+    private Button btnAddCategory;
+    private AlertDialog dialogAdd;
+
+    // rename dialog
+    private AlertDialog dialogRename;
+    private EditText editRename;
+    private String oldName;
+
+    // delete dialog
+    private AlertDialog dialogDelete;
+
+    private boolean isShowing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +66,7 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         super.onDestroy();
         if (dialogAdd != null) dialogAdd.dismiss();
         if (dialogRename != null) dialogRename.dismiss();
+        if (dialogDelete != null) dialogDelete.dismiss();
     }
 
     final View.OnClickListener btnAddCategoryListener = new View.OnClickListener() {
@@ -123,13 +133,17 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         editRename = (EditText) getLayoutInflater().inflate(R.layout.d_categories_rename, null, false);
         editRename.setText(oldName);
 
-        dialogRename = new AlertDialog.Builder(Categories.this)
-                .setView(editRename)
-                .setPositiveButton("Save", dialogRenameConfirm)
-                .setNegativeButton("Cancel", dialogRenameClose)
-                .setCancelable(true)
-                .setOnCancelListener(dialogRenameCancel)
-                .show();
+        if (!isShowing) {
+            isShowing = true;
+            dialogRename = new AlertDialog.Builder(Categories.this)
+                    .setView(editRename)
+                    .setPositiveButton("Save", dialogRenameConfirm)
+                    .setNegativeButton("Cancel", dialogRenameClose)
+                    .setNeutralButton("Delete", dialogRenameDelete)
+                    .setCancelable(true)
+                    .setOnCancelListener(dialogRenameCancel)
+                    .show();
+        }
     }
 
     private void refreshCursor(CategoryDBOperator categoryDBOperator) {
@@ -162,6 +176,34 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         }
     };
 
+    private final AlertDialog.OnClickListener dialogRenameDelete = new AlertDialog.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
+            dialogDelete = new AlertDialog.Builder(Categories.this)
+                    .setMessage("Are you sure?")
+                    .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (oldName != null) {
+                                String categoryName = oldName;
+                                if (!Utils.isStringEmpty(categoryName)) {
+                                    CategoryDBOperator categoryDBOperator = new CategoryDBOperator(getApplicationContext());
+                                    categoryDBOperator.deleteCategory(categoryName);
+                                    refreshCursor(categoryDBOperator);
+                                } else {
+                                    Utils.LogW("Can't delete empty category!");
+                                }
+                            }
+                            cleanupRename();
+                        }
+                    })
+                    .setNegativeButton("Cancel", dialogRenameClose)
+                    .setCancelable(true)
+                    .setOnCancelListener(dialogRenameCancel)
+                    .show();
+        }
+    };
+
     private final DialogInterface.OnCancelListener dialogRenameCancel = new DialogInterface.OnCancelListener() {
         @Override
         public void onCancel(DialogInterface dialogInterface) {
@@ -173,5 +215,6 @@ public class Categories extends ListActivity implements AdapterView.OnItemClickL
         dialogRename = null;
         oldName = null;
         editRename = null;
+        isShowing = false;
     }
 }
