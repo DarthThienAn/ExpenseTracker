@@ -30,9 +30,9 @@ public class DateSpinnerController {
     }
 
     private void init(int idDay, int idMonth, int idYear) {
-        spinnerYear = Utils.createSpinner(activity, R.id.addexpense_year, R.array.years);
-        spinnerMonth = Utils.createSpinner(activity, R.id.addexpense_month, R.array.months);
-        spinnerDay = Utils.createSpinner(activity, R.id.addexpense_day, R.array.days);
+        spinnerYear = Utils.createSpinner(activity, idYear, R.array.years);
+        spinnerMonth = Utils.createSpinner(activity, idMonth, R.array.months);
+        spinnerDay = Utils.createSpinner(activity, idDay, R.array.days);
     }
 
     public String getDateString() {

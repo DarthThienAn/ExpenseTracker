@@ -60,7 +60,21 @@
     <EditText
             android:id="@+id/addexpense_comment"
             android:layout_below="@id/addexpense_properties"
-            style="@style/matchMatch"
+            style="@style/wrapHeightMatchWidth"
+            android:maxLines="5"
+            android:gravity="top"
             android:hint="comment"
             />
+
+    <!--Add Action Button-->
+    <Button android:id="@+id/addexpense_btn_add"
+            android:paddingLeft="44dp"
+            android:paddingRight="44dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/wrapWrap"
+            android:text="Add" />
+
 </RelativeLayout>

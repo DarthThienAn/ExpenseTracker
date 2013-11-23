@@ -24,4 +24,42 @@ public class Expense {
     private ArrayList<Category> categories;
     private String comment;
 
+    public Expense(String date, float cost, ArrayList<Category> categories, String comment) {
+        this.date = date;
+        this.cost = cost;
+        this.categories = categories;
+        this.comment = comment;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<Category> categories) {
+        this.categories = categories;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }
