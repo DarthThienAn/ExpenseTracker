@@ -7,11 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import com.mark.ExpenseTracker.R;
+import com.mark.ExpenseTracker.database.ExpenseDBOperator;
+import com.mark.ExpenseTracker.item.Category;
 import com.mark.ExpenseTracker.item.Expense;
 import com.mark.ExpenseTracker.spinner.CategoriesSpinner;
-import com.mark.ExpenseTracker.util.CategoryDBOperator;
+import com.mark.ExpenseTracker.database.CategoryDBOperator;
 import com.mark.ExpenseTracker.util.DateSpinnerController;
 import com.mark.ExpenseTracker.util.Utils;
+
+import java.util.ArrayList;
 
 public class AddExpense extends Activity {
 
@@ -57,7 +61,7 @@ public class AddExpense extends Activity {
         public void onClick(View v) {
             String costString = editCost.getText().toString();
             if (Utils.isStringEmpty(costString)) {
-                // cost cannot be blank!
+                Utils.toastW(AddExpense.this, "Cost cannot be blank");
                 return;
             }
 
@@ -69,8 +73,13 @@ public class AddExpense extends Activity {
             try {
                 float cost = Float.parseFloat(costString);
                 String dateString = dateController.getDateString();
-                Expense newExpense = new Expense(dateString, cost, null, commentString);
+                //TODO input categories
+                Expense newExpense = new Expense(dateString, cost, (ArrayList<Category>) null, commentString);
+
+                ExpenseDBOperator expenseDBOperator = new ExpenseDBOperator(getApplicationContext());
+                expenseDBOperator.addExpense(newExpense);
             } catch (NumberFormatException e) {
+                Utils.toastW(AddExpense.this, "Cost input was invalid");
                 return;
             }
         }

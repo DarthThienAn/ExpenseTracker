@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 import com.mark.ExpenseTracker.R;
-import com.mark.ExpenseTracker.util.CategoryDBOperator;
-import com.mark.ExpenseTracker.util.Utils;
+import com.mark.ExpenseTracker.database.CategoryDBOperator;
 
 public class CategoriesAdapter extends CursorAdapter {
     public CategoriesAdapter(Context context, Cursor c) {

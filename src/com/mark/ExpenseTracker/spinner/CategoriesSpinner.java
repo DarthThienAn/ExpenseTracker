@@ -25,7 +25,7 @@ import android.widget.CursorAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import com.mark.ExpenseTracker.R;
-import com.mark.ExpenseTracker.util.CategoryDBOperator;
+import com.mark.ExpenseTracker.database.CategoryDBOperator;
 
 public class CategoriesSpinner extends CursorAdapter implements SpinnerAdapter {
     public CategoriesSpinner(Context context, Cursor c) {

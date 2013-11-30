@@ -17,9 +17,11 @@
 package com.mark.ExpenseTracker.util;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Utils {
     // generic function to create spinners
@@ -50,5 +52,10 @@ public class Utils {
 
     public static void LogE(String message) {
         if (LOG) Log.e(Constants.LOG_TAG, message);
+    }
+
+    public static void toastW(Context context, String message) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT);
+        LogW(message);
     }
 }

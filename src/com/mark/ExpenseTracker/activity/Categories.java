@@ -19,14 +19,13 @@ package com.mark.ExpenseTracker.activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import com.mark.ExpenseTracker.R;
 import com.mark.ExpenseTracker.database.CategoryEntry;
 import com.mark.ExpenseTracker.list.CategoriesAdapter;
-import com.mark.ExpenseTracker.util.CategoryDBOperator;
+import com.mark.ExpenseTracker.database.CategoryDBOperator;
 import com.mark.ExpenseTracker.util.Utils;
 
 public class Categories extends ListActivity implements AdapterView.OnItemClickListener {

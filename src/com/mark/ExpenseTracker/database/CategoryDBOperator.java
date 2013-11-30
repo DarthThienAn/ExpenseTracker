@@ -1,4 +1,4 @@
-package com.mark.ExpenseTracker.util;
+package com.mark.ExpenseTracker.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.mark.ExpenseTracker.database.CategoryDBHelper;
 import com.mark.ExpenseTracker.database.CategoryEntry;
+import com.mark.ExpenseTracker.util.Utils;
+
 import java.util.ArrayList;
 
 public class CategoryDBOperator {
@@ -132,7 +134,7 @@ public class CategoryDBOperator {
             return null;
         }
         while (!cursor.isAfterLast()) {
-            String name = cursor.getString(cursor.getColumnIndexOrThrow(CategoryEntry.COLUMN_NAME));
+            String name = getNameFromCursor(cursor);
             names.add(name);
             cursor.moveToNext();
         }
