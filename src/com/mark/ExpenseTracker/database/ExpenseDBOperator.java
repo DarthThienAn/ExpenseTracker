@@ -10,10 +10,10 @@ import com.mark.ExpenseTracker.util.Utils;
 import java.util.ArrayList;
 
 public class ExpenseDBOperator {
-    CategoryDBHelper dbHelper;
+    ExpenseDBHelper dbHelper;
 
     public ExpenseDBOperator(Context context) {
-        dbHelper = new CategoryDBHelper(context);
+        dbHelper = new ExpenseDBHelper(context);
     }
 
     public void addExpense(Expense expense) {
