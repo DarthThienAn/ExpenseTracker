@@ -70,30 +70,30 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <!--Categories-->
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_weight="0"
-            style="@style/wrapHeightMatchWidth">
-        <EditText
-                android:id="@+id/addexpense_cost"
-                style="@style/wrapWrap"
-                android:inputType="numberDecimal"
-                android:layout_weight="1"
-                android:hint="$$$$"
-                />
-        <Spinner
-                android:id="@+id/addexpense_category"
-                android:layout_weight="1"
-                style="@style/wrapWrap"
-                />
+    <!--Filter Button-->
+    <Button android:id="@+id/filter_btn_filter"
+            android:layout_gravity="center_horizontal"
+            android:text="Filter"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+    <!--Filter Result Total Cost-->
+    <TextView android:id="@+id/filter_txt_total_cost"
+              android:layout_gravity="center_horizontal"
+              android:text="Total: 0.0"
+              android:padding="8dp"
+              android:layout_margin="8dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
 
     <!--Expenses-->
     <ListView
             android:id="@android:id/list"
             android:layout_weight="1"
+            android:dividerHeight="1dp"
+            android:divider="@android:color/black"
             style="@style/wrapHeightMatchWidth"
             />
 </LinearLayout>
